@@ -1,6 +1,5 @@
 import cohere
 import streamlit as st
-import config
 
 
 
@@ -9,7 +8,8 @@ import config
 
 
 # Initialisation de cohere :
-co = cohere.ClientV2(config.API_KEY_COHERE)
+api_key = st.secrets["COHERE_API_KEY"]
+co = cohere.ClientV2(api_key)
 
 
 # Interface utilisateur :
